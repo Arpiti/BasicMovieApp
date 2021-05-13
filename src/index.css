@@ -87,6 +87,13 @@ form{
   padding: 0 1rem;
 }
 
+.brandName2 {
+ color: #202735;
+ background-color: white;
+ padding: .1rem;
+ border-radius: 2px;
+}
+
 .search {
    background-color: transparent;
    border: 2px solid #202735;

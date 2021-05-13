@@ -52,7 +52,7 @@ function App() {
       <header>
         <form onSubmit={handleSearchButton}>
           <div onClick={handleSearchButton}>
-            <h1 className="brandName" >Farzi IMDB</h1>
+            <h1 className="brandName" >Movie<span className="brandName2">HUB</span></h1>
           </div>
           <input
             className="search"

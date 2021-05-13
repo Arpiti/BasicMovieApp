@@ -17,6 +17,10 @@ body {
    box-sizing: border-box;
 }
 
+a {
+color: red;
+}
+
 form{
   display: flex;
   justify-content: space-between;
@@ -115,3 +119,54 @@ form{
   color: #c24832;
 }
 
+.cancel_image_button{
+float: right;
+}
+
+.modal_container {
+  position: fixed; 
+  top: 3%;
+  left: 0;
+  width: 100%;
+  background: rgba(56, 54, 54, 0.9);
+}
+
+.movie_detail_container {
+  padding: 2rem;
+  
+}
+.movie-cover {
+  align-items: center;
+}
+
+.movie_cover_image {
+  padding: 1rem;
+  width: 100%;
+  object-fit: fill;
+  border-radius: 3px;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+
+.movie_details {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.movie_poster {
+  width: 100%;
+  height: 100%;
+  max-width: 400px;
+  background-color: #101113;
+  border-radius: 3px;
+  flex-grow: 1;
+  box-shadow: 3px 3px 5px rgba(0,0,0,0.1);
+}
+
+.movie_information {
+  padding-left: 2rem;
+  padding-right: 2rem;
+  flex-grow: 1;
+}

@@ -1,11 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Movie from './components/Movie';
+import { Modal } from './components/Modal';
 import { TRENDING_API, SEARCH_API } from './api/movieDB';
 
 function App() {
 
   const [movies, setMovies] = useState([]);
   const [searchText, setSearchText] = useState('');
+
+  const [movieClicked, setMovieClicked] = useState('');
 
   useEffect(() => {
     getMovies(TRENDING_API);
@@ -33,11 +36,24 @@ function App() {
 
   }
 
+  const handleOnClickMovie = (movie, poster) => {
+    //movie.prototype.finalPoster = poster;
+    const movieWithPosterSrc = { ...movie, finalPoster: poster };
+    setMovieClicked(movieWithPosterSrc);
+  }
+
+  const onClickModalContainer = () => {
+    console.log('Hi found modal container outside if');
+    setMovieClicked(null);
+  }
+
   return (
     <div className="App">
       <header>
         <form onSubmit={handleSearchButton}>
-          <h1 className="brandName">Farzi IMDB</h1>
+          <div onClick={handleSearchButton}>
+            <h1 className="brandName" >Farzi IMDB</h1>
+          </div>
           <input
             className="search"
             type="search"
@@ -47,8 +63,11 @@ function App() {
         </form>
       </header>
       <div className="movie-container">
-        {movies.length > 0 && movies.map(movie => <Movie key={movie.id} movieData={movie} />)}
+        {movies.length > 0 && movies.map(movie => <Movie key={movie.id} movieData={movie} handleOnMovieClick={handleOnClickMovie} />)}
       </div>
+      {movieClicked && <div className="modal_container">
+        <Modal movie={movieClicked} onClickModalContainer={onClickModalContainer} />
+      </div>}
     </div>
   );
 }

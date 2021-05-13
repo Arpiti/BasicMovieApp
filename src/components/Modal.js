@@ -35,8 +35,8 @@ export const Modal = (props) => {
     }, [finalURL]);
 
     return (
-        <div className="movie_detail_container">
-            <img className="cancel_image_button" src='close.png' alt='close button' onClick={onClickModalContainer} />
+        <div className="movie_detail_container" onClick={onClickModalContainer}>
+            <img className="cancel_image_button" src='close.png' alt='close button' />
             {/* <section className="movie_cover">
                 <img className="movie_cover_image" src={IMAGES_API + movie.backdrop_path} alt={movie.title + ' CoverImage'} />
             </section> */}
